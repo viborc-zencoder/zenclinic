@@ -16,6 +16,10 @@ ZenClinic is a veterinary clinic management system built with Spring Boot. It al
 - [Sample Data](#sample-data)
 - [Project Structure](#project-structure)
 - [Troubleshooting](#troubleshooting)
+- [Maven Commands Reference](#maven-commands-reference)
+  - [Basic Commands](#basic-commands)
+  - [Spring Boot Specific Commands](#spring-boot-specific-commands)
+  - [Notes on Maven Wrapper](#notes-on-maven-wrapper)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -68,6 +72,20 @@ cd ZenClinic
 ```bash
 ./mvnw spring-boot:run
 ```
+
+   This command uses the Maven wrapper (`mvnw`) to run the Spring Boot application. The Spring Boot Maven plugin's `run` goal starts the application.
+
+   For a clean start that rebuilds everything from scratch, use:
+
+```bash
+./mvnw clean spring-boot:run
+```
+
+   This command:
+   - `clean`: Deletes all compiled classes and resources from the `target` directory
+   - `spring-boot:run`: Compiles the code and starts the Spring Boot application
+
+   Using `clean` is helpful when you want to ensure all previous compiled files are removed and the application is built from scratch, which can resolve certain issues after code changes.
 
 2. Access the application in your web browser:
 
@@ -177,6 +195,69 @@ If you encounter memory issues, you can increase the heap size:
 ```bash
 ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Xmx512m"
 ```
+
+## Maven Commands Reference
+
+ZenClinic uses Maven for build automation and dependency management. Here are the key Maven commands you might need:
+
+### Basic Commands
+
+- **Clean and compile the project**:
+  ```bash
+  ./mvnw clean compile
+  ```
+
+- **Run tests**:
+  ```bash
+  ./mvnw test
+  ```
+
+- **Package the application (creates a JAR file)**:
+  ```bash
+  ./mvnw package
+  ```
+
+- **Install the package to local Maven repository**:
+  ```bash
+  ./mvnw install
+  ```
+
+### Spring Boot Specific Commands
+
+- **Run the application**:
+  ```bash
+  ./mvnw spring-boot:run
+  ```
+
+- **Clean and run the application**:
+  ```bash
+  ./mvnw clean spring-boot:run
+  ```
+
+- **Run with specific profile**:
+  ```bash
+  ./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+  ```
+
+- **Run with increased memory**:
+  ```bash
+  ./mvnw spring-boot:run -Dspring-boot.run.jvmArguments="-Xmx512m"
+  ```
+
+- **Build an executable JAR**:
+  ```bash
+  ./mvnw clean package
+  ```
+  The JAR will be created in the `target` directory and can be run with:
+  ```bash
+  java -jar target/zenclinic-0.0.1-SNAPSHOT.jar
+  ```
+
+### Notes on Maven Wrapper
+
+- The project uses Maven Wrapper (`mvnw`), which automatically downloads the correct Maven version if needed
+- On Windows, use `mvnw.cmd` instead of `./mvnw`
+- If you have Maven installed globally, you can use `mvn` instead of `./mvnw`
 
 ## Contributing
 
