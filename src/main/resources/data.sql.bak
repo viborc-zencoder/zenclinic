@@ -1,0 +1,47 @@
+-- Specialties
+INSERT INTO specialties VALUES (1, 'Radiology');
+INSERT INTO specialties VALUES (2, 'Surgery');
+INSERT INTO specialties VALUES (3, 'Dentistry');
+INSERT INTO specialties VALUES (4, 'Cardiology');
+INSERT INTO specialties VALUES (5, 'Dermatology');
+
+-- Vets
+INSERT INTO vets VALUES (1, 'James', 'Carter');
+INSERT INTO vets VALUES (2, 'Helen', 'Leary');
+INSERT INTO vets VALUES (3, 'Linda', 'Douglas');
+INSERT INTO vets VALUES (4, 'Rafael', 'Ortega');
+INSERT INTO vets VALUES (5, 'Henry', 'Stevens');
+
+-- Vet Specialties
+INSERT INTO vet_specialties VALUES (2, 1);
+INSERT INTO vet_specialties VALUES (3, 2);
+INSERT INTO vet_specialties VALUES (3, 3);
+INSERT INTO vet_specialties VALUES (4, 2);
+INSERT INTO vet_specialties VALUES (5, 1);
+INSERT INTO vet_specialties VALUES (1, 4);
+INSERT INTO vet_specialties VALUES (2, 5);
+
+-- Pet Types
+INSERT INTO pet_types VALUES (1, 'Dog');
+INSERT INTO pet_types VALUES (2, 'Cat');
+INSERT INTO pet_types VALUES (3, 'Bird');
+INSERT INTO pet_types VALUES (4, 'Rabbit');
+INSERT INTO pet_types VALUES (5, 'Fish');
+INSERT INTO pet_types VALUES (6, 'Reptile');
+
+-- Sample Owners
+INSERT INTO owners VALUES (1, 'George', 'Franklin', '110 W. Liberty St.', 'Madison', '6085551023', 'george.franklin@email.com');
+INSERT INTO owners VALUES (2, 'Betty', 'Davis', '638 Cardinal Ave.', 'Sun Prairie', '6085551749', 'betty.davis@email.com');
+INSERT INTO owners VALUES (3, 'Eduardo', 'Rodriquez', '2693 Commerce St.', 'McFarland', '6085558763', 'eduardo.rodriquez@email.com');
+
+-- Sample Pets
+INSERT INTO pets VALUES (1, 'Leo', '2020-09-07', 'Golden Retriever', 1, 1);
+INSERT INTO pets VALUES (2, 'Basil', '2021-08-06', 'Tabby', 2, 2);
+INSERT INTO pets VALUES (3, 'Rosy', '2021-04-17', 'Cockatiel', 3, 3);
+INSERT INTO pets VALUES (4, 'Jewel', '2022-03-07', 'Dutch', 4, 3);
+
+-- Sample Visits
+INSERT INTO visits VALUES (1, 1, '2023-01-05', 'Annual checkup', 'Healthy', 'No treatment needed');
+INSERT INTO visits VALUES (2, 2, '2023-02-15', 'Limping', 'Sprained leg', 'Rest and anti-inflammatory medication');
+INSERT INTO visits VALUES (3, 3, '2023-03-10', 'Not eating', 'Digestive issue', 'Special diet and probiotics');
+INSERT INTO visits VALUES (4, 4, '2023-04-22', 'Dental check', 'Overgrown teeth', 'Teeth trimming');
